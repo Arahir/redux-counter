@@ -14,7 +14,8 @@
     "mocha": "^2.3.4"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js  --recursive",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -24,9 +25,11 @@
     "redux"
   ],
   "author": "arahir",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Arahir/redux-counter/issues"
   },
-  "homepage": "https://github.com/Arahir/redux-counter#readme"
+  "homepage": "https://github.com/Arahir/redux-counter#readme",
+  "babel": {
+    "presets": ["es2015"]
+  }
 }
