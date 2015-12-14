@@ -1,21 +1,10 @@
 import {createStore} from 'redux';
+import reducers from './reducers';
 
-const counter = (state = 0, action) => {
-  switch (action.type) {
-    case 'INCREMENT':
-      return state + 1;
-      break;
-    case 'DECREASE':
-      return state - 1;
-      break;
-    default:
-      return state;
-  };
-}
-const store = createStore(counter);
+const store = createStore(reducers);
 
 const render = () => {
-  document.getElementById('counter').innerText = store.getState();
+  document.getElementById('counter').innerText = store.getState().counter;
 }
 
 store.subscribe(render);
