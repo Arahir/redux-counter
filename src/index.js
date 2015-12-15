@@ -1,5 +1,6 @@
 import {createStore} from 'redux';
 import reducers from './reducers';
+import counterActions from './actions/counter-actions';
 
 const store = createStore(reducers);
 
@@ -11,9 +12,9 @@ store.subscribe(render);
 render();
 
 document.getElementById('counter-increase').onclick = () => {
-  store.dispatch({type: 'INCREMENT'});
+  store.dispatch(counterActions.increment());
 };
 
 document.getElementById('counter-decrease').onclick = () => {
-  store.dispatch({type: 'DECREASE'});
+  store.dispatch(counterActions.decrement());
 };
